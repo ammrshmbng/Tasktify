@@ -1,4 +1,4 @@
-import { PasswordService } from './../src/users/password/password.service';
+import { PasswordService } from '../src/users/providers/password.service';
 import { Role } from './../src/users/role.enum';
 import { User } from './../src/users/user.entity';
 import * as request from 'supertest';
