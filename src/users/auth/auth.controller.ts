@@ -12,12 +12,12 @@ import {
 import { CreateUserDto } from '../dtos/create-user.dto';
 import { AuthService } from './auth.service';
 import { User } from '../user.entity';
-import { LoginDto } from '../login.dto';
+import { LoginDto } from '../dtos/login.dto';
 import { LoginResponse } from '../responses/login.response';
-import { AuthRequest } from '../auth.request';
+import { AuthRequest } from '../../types/auth.request';
 import { UserService } from '../user/user.service';
 import { Public } from '../decorators/public.decorator';
-import { AdminResponse } from '../admin.response';
+import { AdminResponse } from '../responses/admin.response';
 import { Roles } from '../decorators/roles.decorator';
 import { Role } from '../role.enum';
 

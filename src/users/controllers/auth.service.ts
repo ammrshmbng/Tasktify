@@ -46,7 +46,7 @@ export class AuthService {
     }
 
     if (!(await this.passwordService.verify(password, user.password))) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException('Password is invalid');
     }
 
     return this.generateToken(user);
