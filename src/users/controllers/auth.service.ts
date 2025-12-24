@@ -1,6 +1,7 @@
 import {
   ConflictException,
   Injectable,
+  NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
@@ -41,7 +42,7 @@ export class AuthService {
     // 1) Theres no such user
     // 2) Password is invalid
     if (!user) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new NotFoundException('User not found');
     }
 
     if (!(await this.passwordService.verify(password, user.password))) {

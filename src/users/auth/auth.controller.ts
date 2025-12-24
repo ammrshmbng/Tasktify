@@ -13,7 +13,7 @@ import { CreateUserDto } from '../dtos/create-user.dto';
 import { AuthService } from './auth.service';
 import { User } from '../user.entity';
 import { LoginDto } from '../login.dto';
-import { LoginResponse } from '../login.response';
+import { LoginResponse } from '../responses/login.response';
 import { AuthRequest } from '../auth.request';
 import { UserService } from '../user/user.service';
 import { Public } from '../decorators/public.decorator';
