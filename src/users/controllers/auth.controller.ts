@@ -15,20 +15,23 @@ import { User } from '../user.entity';
 import { LoginDto } from '../login.dto';
 import { LoginResponse } from '../login.response';
 import { AuthRequest } from '../auth.request';
-import { UserService } from '../user/user.service';
 import { Public } from '../decorators/public.decorator';
 import { AdminResponse } from '../admin.response';
 import { Roles } from '../decorators/roles.decorator';
 import { Role } from '../role.enum';
+import { UserService } from '../providers/user.service';
 
 @Controller('auth')
+// Serialize the response from objects to JSON
 @UseInterceptors(ClassSerializerInterceptor)
+// Exclude(hide) all properties from the response but the ones
+// we explicitly include in the class entity using @Expose() decorator
 @SerializeOptions({ strategy: 'excludeAll' })
 export class AuthController {
   constructor(
     private readonly authService: AuthService,
     private readonly userService: UserService,
-  ) {}
+  ) { }
 
   @Post('register')
   @Public()
