@@ -59,10 +59,11 @@ export class AuthController {
       return user;
     }
 
-    throw new NotFoundException();
+    throw new NotFoundException('User not found');
   }
 
-  @Get('admin') // /auth/admin
+  //last read
+  @Get('admin')
   @Roles(Role.ADMIN)
   async adminOnly(): Promise<AdminResponse> {
     return new AdminResponse({ message: 'This is for admins only!' });
