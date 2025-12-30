@@ -15,11 +15,11 @@ import { User } from '../user.entity';
 import { LoginDto } from '../dtos/login.dto';
 import { LoginResponse } from '../responses/login.response';
 import { AuthRequest } from '../../types/auth.request';
-import { UserService } from '../user/user.service';
 import { Public } from '../decorators/public.decorator';
 import { AdminResponse } from '../responses/admin.response';
 import { Roles } from '../decorators/roles.decorator';
 import { Role } from '../role.enum';
+import { UserService } from '../providers/user.service';
 
 @Controller('auth')
 @UseInterceptors(ClassSerializerInterceptor)
@@ -28,7 +28,7 @@ export class AuthController {
   constructor(
     private readonly authService: AuthService,
     private readonly userService: UserService,
-  ) {}
+  ) { }
 
   @Post('register')
   @Public()
